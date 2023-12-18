@@ -43,7 +43,6 @@ export class App extends Component {
     const filteredContacts = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter)
     );
-
     return (
       <div>
         <h1>Phonebook</h1>
