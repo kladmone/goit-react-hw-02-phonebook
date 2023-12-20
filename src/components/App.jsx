@@ -21,7 +21,7 @@ export class App extends Component {
 
     this.setState(prevState => {
       return {
-        contacts: [...prevState.contacts, { ...formData, id: nanoid }],
+        contacts: [...prevState.contacts, { ...formData, id: nanoid() }],
       };
     });
   };
@@ -32,10 +32,11 @@ export class App extends Component {
   };
 
   handleDeleteContact = contactId => {
-    this.setState({
-      contacts: this.state.contacts.filter(contact => contact.id !== contactId),
-    });
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
   };
+
   render() {
     const filteredContacts = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter)
