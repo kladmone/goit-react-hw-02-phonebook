@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import css from './AddContactForm.module.css';
 
 export class AddContactForm extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
   handleFormSubmit = event => {
     event.preventDefault();
     const name = event.currentTarget.name.value;
